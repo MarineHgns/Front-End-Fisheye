@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -9,8 +9,8 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
+      <a href="index.html" aria-label="retour menu principal"><img src="assets/images/logo.png"   class="logo" alt="Fisheye"/></a>
+    </header> 
     <main id="main">
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
@@ -19,18 +19,68 @@
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <div class="photographer_section">
+          <h2 class="contact-me">Contactez-moi </h2>
+          <img src="assets/icons/close.svg" alt="bouton croix fermeture" onclick="closeModal()" aria-label="bouton croix fermeture">
+          </div>
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
+				<form
+              name="contact-form"
+              method="get"
+              id="contact-form"
+            >
+              <div
+                class="first-form">
+                <label for="first" aria-label="prénom">Prénom</label>
+                <input
+                  class="text-control"
+                  type="text"
+                  id="first"
+                  name="first" 
+                  autocomplete="given-name" 
+                />
+                <span class="firstError error" style="display: none;">Le prénom doit faire plus de 2 caractères.</span>
+              </div>
+              <div
+                class="last-form">
+                <label for="last" aria-label="nom">Nom</label>
+                <input
+                  class="text-control"
+                  type="text"
+                  id="last"
+                  name="last" 
+                  autocomplete="family-name"
+                />
+                <span class="lastError error" style="display: none;">Le nom doit faire plus de 2 caractères.</span>
+              </div>
+              <div
+                class="email-form">
+                <label for="email" aria-label="email">E-mail</label>
+                <input
+                  class="text-control"
+                  type="text"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                />
+                <span class="emailError error" style="display: none;">L'adresse mail est incorrecte</span>
+              </div>
+
+              <div
+                class="message-form">
+                <label for="message" aria-label="message à remplir">Votre message</label>
+              <textarea
+                  class="text-control"
+                  id="message"
+                  name="message"  placeholder="Message..." rows="5"></textarea>
+                <span class="messageError error" style="display: none;">Le message est vide</span>
+              </div>
+              <button aria-label="envoyer" id="submit" class="contact_button" onclick="contactClose()">Envoyer</button>  
+      
+            </form>
 			</div>
 		</div>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/pages/photographerpage.js"></script>
   </body>
 </html>
