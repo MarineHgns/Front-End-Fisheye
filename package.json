@@ -1,0 +1,22 @@
+{
+  "name": "huygensmarine_6_25112021",
+  "version": "1.0.0",
+  "description": "esLint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarineHgns/Huygensmarine_6_25112021.git"
+  },
+  "author": "Marine Hgns",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarineHgns/Huygensmarine_6_25112021/issues"
+  },
+  "homepage": "https://github.com/MarineHgns/Huygensmarine_6_25112021#readme",
+  "devDependencies": {
+    "eslint": "^8.3.0"
+  }
+}
