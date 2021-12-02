@@ -21,6 +21,7 @@ h1 {
 h2 {
   font-weight: 450;
   white-space: nowrap;
+  margin: 0em;
 }
 
 .logo {
@@ -53,25 +54,26 @@ h2 {
   text-align: center;
   justify-content: center;
   align-items: center;
+  margin: 0em;
 }
 
 .photographer_section article h3 {
   color: #d3573c;
   font-weight: 550;
-  font-size: 1em;
-  margin: 0.2em;
+  font-size: 1.2em;
+  margin: 0em;
 }
 
 .photographer_section article h4 {
   font-weight: 650;
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin: 0em;
 }
 
 .photographer_section article h5 {
   color: #525252;
   font-weight: 400;
-  font-size: 0.7em;
+  font-size: 0.9em;
   margin: 0.4em;
 }
 
@@ -80,4 +82,6 @@ h2 {
   width: 200px;
   border-radius: 50%;
   object-fit: cover;
+  margin-bottom: 0.4em;
+  background-color: salmon;
 }

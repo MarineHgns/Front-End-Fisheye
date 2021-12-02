@@ -1,9 +1,13 @@
+import photographerFactory from "../factories/photographer.js";
+
 const modal = document.getElementById("contact_modal");
 
+// eslint-disable-next-line no-unused-vars
 function displayModal() {
   modal.style.display = "block";
 }
 
+// eslint-disable-next-line no-unused-vars
 function closeModal() {
   modal.style.display = "none";
 }
@@ -83,6 +87,6 @@ const formValid = () => {
   return isValid;
 };
 
-function contactClose() {
-  modal.style.display = "none";
-}
+// function contactClose() {
+//   modal.style.display = "none";
+// }
