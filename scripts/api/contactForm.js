@@ -1,13 +1,10 @@
-import photographerFactory from "../factories/photographer.js";
+// import photographerFactory from "../factories/photographer.js";
 
-const modal = document.getElementById("contact_modal");
-
-// eslint-disable-next-line no-unused-vars
+const modal = document.querySelector("#contact_modal");
 function displayModal() {
   modal.style.display = "block";
 }
 
-// eslint-disable-next-line no-unused-vars
 function closeModal() {
   modal.style.display = "none";
 }
@@ -86,7 +83,3 @@ const formValid = () => {
     messageChecker();
   return isValid;
 };
-
-// function contactClose() {
-//   modal.style.display = "none";
-// }
