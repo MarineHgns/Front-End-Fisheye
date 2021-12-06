@@ -13,18 +13,18 @@
     </header> 
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal('block')">Contactez-moi</button>
+      <div class="photographer_section">
       </div>
-
-      
+    </div>
     </main>
+    
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <div class="photographer_section">
+          
           <h2 class="contact-me">Contactez-moi </h2>
-          <img src="assets/icons/close.svg" alt="bouton croix fermeture" class="close_btn" onclick="displayModal('none')" aria-label="bouton croix fermeture">
-          </div>
+          <img src="assets/icons/close.svg" alt="bouton croix fermeture" class="close_btn" onclick="displayModal()" aria-label="bouton croix fermeture">
+          
         </header>
 				<form
               name="contact-form"
@@ -82,10 +82,8 @@
             </form>
 			</div>
 		</div>
-    <script type="module" src="/scripts/utils/contactForm.js" ></script>
-    <script src="/scripts/pages/photographer.js" type="module"></script>
-    <script src="/scripts/factories/photographer.js" type="module"></script>
-    <script src="/scripts/pages/index.js" type="module"></script>
+    
+    <script src="/scripts/index.js" type="module"></script>
 
   </body>
 </html>
