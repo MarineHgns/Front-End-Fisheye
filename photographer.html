@@ -13,15 +13,17 @@
     </header> 
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" onclick="displayModal('block')">Contactez-moi</button>
       </div>
+
+      
     </main>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
           <div class="photographer_section">
           <h2 class="contact-me">Contactez-moi </h2>
-          <img src="assets/icons/close.svg" alt="bouton croix fermeture" onclick="closeModal()" aria-label="bouton croix fermeture">
+          <img src="assets/icons/close.svg" alt="bouton croix fermeture" class="close_btn" onclick="displayModal('none')" aria-label="bouton croix fermeture">
           </div>
         </header>
 				<form
@@ -75,12 +77,15 @@
                   name="message"  placeholder="Message..." rows="5"></textarea>
                 <span class="messageError error" style="display: none;">Le message est vide</span>
               </div>
-              <button aria-label="envoyer" id="submit" class="contact_button" onclick="contactClose()">Envoyer</button>  
+              <button aria-label="envoyer" id="submit" class="contact_send">Envoyer</button>  
       
             </form>
 			</div>
 		</div>
-    <script src="/scripts/utils/contactForm.js" type="module"></script>
+    <script type="module" src="/scripts/utils/contactForm.js" ></script>
     <script src="/scripts/pages/photographer.js" type="module"></script>
+    <script src="/scripts/factories/photographer.js" type="module"></script>
+    <script src="/scripts/pages/index.js" type="module"></script>
+
   </body>
 </html>
