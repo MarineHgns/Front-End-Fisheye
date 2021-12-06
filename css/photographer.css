@@ -8,6 +8,39 @@
   margin: 0 100px;
 }
 
+.photographer_section_header article {
+  justify-self: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 2.4em;
+}
+
+.photographe-name {
+  color: #d3573c;
+  font-size: 36px;
+}
+
+.localisation {
+  color: #901c1c;
+  font-weight: 800;
+}
+
+.citation {
+  color: #525252;
+  font-weight: 400;
+}
+
+.photographer_section_header img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.4em;
+  background-color: salmon;
+}
+
 .contact_button {
   font-size: 20px;
   font-weight: bold;
