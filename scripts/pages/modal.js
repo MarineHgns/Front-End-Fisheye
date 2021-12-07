@@ -1,14 +1,19 @@
-const modal = document.querySelector("#contact_modal");
-function displayModal() {
-  modal.style.display = "block";
+export default class Modal {
+  // eslint-disable-next-line no-unused-vars
+  static displayModal(data) {}
 }
 
-function closeModal() {
-  modal.style.display = "none";
-}
+// const modal = document.querySelector("#contact_modal");
+// function displayModal() {
+//   modal.style.display = "block";
+// }
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// function closeModal() {
+//   modal.style.display = "none";
+// }
+
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };

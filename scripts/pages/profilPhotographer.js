@@ -1,3 +1,6 @@
+import MediaConstructor from "./mediaConstructor.js";
+import Modal from "./modal.js";
+
 export default class ProfilPhotographer {
   static displayProfilPhotographer(data) {
     let photographersData = data.photographers;
@@ -15,8 +18,8 @@ export default class ProfilPhotographer {
     const templatePhotographerProfil = `
                 <div class='ph-infos'>
                     <h2 class="photographe-name">${photographers[0].name}</h2>
-                    <p class="localisation">${photographers[0].city}, ${photographers[0].country}</p>
-                    <p class="citation">${photographers[0].tagline}</p>
+                      <p class="localisation">${photographers[0].city}, ${photographers[0].country}</p>
+                        <p class="citation">${photographers[0].tagline}</p>
                 </div>
                 <button class="contact_button ph-profile-btn" title="Contactez-moi">Contactez-moi</button>
                 <img src="${picture}" alt="${photographers[0].name}">
@@ -24,5 +27,18 @@ export default class ProfilPhotographer {
 
     sectionPhotographerProfil[0].appendChild(article);
     article.innerHTML = templatePhotographerProfil;
+
+    const medias = data.media;
+    const photographerMedias = id
+      ? medias.filter((media) => media.photographerId == id)
+      : [];
+    new MediaConstructor().displayMedia(photographerMedias);
+
+    const modal = data.photographers;
+    const photographerMordal = id
+      ? modal.filter((photographer) => photographer.id == id)
+      : [];
+    new Modal().displayModal(photographerMordal);
+    //a modifier
   }
 }

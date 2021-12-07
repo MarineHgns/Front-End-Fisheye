@@ -1,3 +1,0 @@
-//Media
-// Image
-// Vidéo
