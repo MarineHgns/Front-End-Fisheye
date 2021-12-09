@@ -12,7 +12,7 @@ export default class ProfilPhotographer {
     const sectionPhotographerProfil = document.getElementsByClassName(
       "photographer_section_header"
     );
-    const picture = `assets/Photographers ID Photos/${photographersData[0].portrait}`;
+    const picture = `assets/Photographers ID Photos/${photographers[0].portrait}`;
     let article = document.createElement("article");
     article.classList.add("header-photographer-profile");
     const templatePhotographerProfil = `
@@ -39,6 +39,5 @@ export default class ProfilPhotographer {
       ? modal.filter((photographer) => photographer.id == id)
       : [];
     new Modal().displayModal(photographerMordal);
-    //a modifier
   }
 }
