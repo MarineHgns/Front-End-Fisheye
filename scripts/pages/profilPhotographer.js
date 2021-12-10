@@ -1,5 +1,6 @@
 import MediaConstructor from "./mediaConstructor.js";
 import Modal from "./modal.js";
+import Form from "./form.js";
 export default class ProfilPhotographer {
   static displayProfilPhotographer(data) {
     let photographersData = data.photographers;
@@ -40,5 +41,6 @@ export default class ProfilPhotographer {
       ? modal.filter((photographer) => photographer.id == id)
       : [];
     new Modal().displayModal(photographerModal);
+    new Form().displayForm();
   }
 }
