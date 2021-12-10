@@ -19,13 +19,14 @@
     </div>
     </main>
     
-    <div id="contact_modal">
+    <div id="contact_modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1" aria-labelledby="dialog-form" 
+    aria-describedby="dialog-desc">
 			<div class="modal">
 				<header>
       
           <h2 class="contact-me">Contactez-moi </h2>
           <span id="photo-name"></span>
-          <img src="assets/icons/close.svg" alt="bouton croix fermeture" class="close_btn" aria-label="bouton croix fermeture">
+          <img src="assets/icons/close.svg" alt="bouton croix fermeture" class="close_btn" aria-label="bouton croix fermeture" title="fermeture" data-dismiss="dialog">
           
         </header>
 				<form
@@ -79,7 +80,7 @@
                   name="message"  placeholder="Message..." rows="5"></textarea>
                 <span class="messageError error" style="display: none;">Le message est vide</span>
               </div>
-              <button aria-label="envoyer" id="submit" class="contact_send">Envoyer</button>  
+              <button class="contact_button" aria-label="envoyer" id="submit" class="contact_send">Envoyer</button>  
       
             </form>
             

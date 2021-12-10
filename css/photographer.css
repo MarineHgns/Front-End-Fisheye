@@ -1,5 +1,6 @@
 #contact_modal {
   display: none;
+  height: 0px;
 }
 
 .photograph-header {
@@ -52,6 +53,17 @@
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.contact_button:focus {
+  border: black 4px solid;
+}
+
+#photo-name {
+  font-size: 2.9em;
+  padding-top: 1em;
+  position: absolute;
+  font-weight: 600;
 }
 
 #gallerie {
@@ -138,8 +150,9 @@
 .modal header img {
   cursor: pointer;
   position: relative;
-  top: -4.8em;
-  right: -2.2em;
+  top: -2.4em;
+  right: -1em;
+  width: 2em;
 }
 
 .modal header h2 {
@@ -167,6 +180,7 @@ form div {
   width: 100%;
   align-items: self-start;
   margin-bottom: 26px;
+  margin-top: 0.4em;
 }
 
 form input {
@@ -174,6 +188,14 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+}
+
+form input:focus {
+  border: black 4px solid;
+}
+
+form textarea:focus {
+  border: black 4px solid;
 }
 
 textarea {
@@ -188,4 +210,8 @@ textarea {
   font-weight: 800;
   padding-top: 0.5em;
   margin-left: 0.4em;
+}
+
+.first-form {
+  margin-top: 1.8em;
 }

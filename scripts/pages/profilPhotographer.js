@@ -20,7 +20,9 @@ export default class ProfilPhotographer {
                       <p class="localisation">${photographers[0].city}, ${photographers[0].country}</p>
                         <p class="citation">${photographers[0].tagline}</p>
                 </div>
-                <button class="contact_button ph-profile-btn" title="Contactez-moi">Contactez-moi</button>
+                <button class="contact_button ph-profile-btn" type="button" 
+                aria-haspopup="dialog"
+                aria-controls="dialog" title="Contactez-moi">Contactez-moi</button>
                 <img src="${picture}" alt="${photographers[0].name}">
             `;
 

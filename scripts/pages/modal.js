@@ -13,11 +13,9 @@ export default class Modal {
 
     closeBtn.addEventListener("click", closeModal);
 
-    // LAUNCH MODAL
-
-    // CLOSE MODAL
     function closeModal() {
       modalbg.style.display = "none";
+      modalbg.setAttribute("aria-hidden", false);
     }
 
     window.onclick = function (event) {
@@ -25,7 +23,7 @@ export default class Modal {
         modalbg.style.display = "none";
       }
     };
-    // DISPLAY PH NAMES IN FORM
+
     function formPhotographerName(data) {
       let id = window.location.search.split("id=")[1];
       let photographers = !id
