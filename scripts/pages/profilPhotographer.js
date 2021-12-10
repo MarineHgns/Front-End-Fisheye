@@ -1,6 +1,5 @@
 import MediaConstructor from "./mediaConstructor.js";
 import Modal from "./modal.js";
-
 export default class ProfilPhotographer {
   static displayProfilPhotographer(data) {
     let photographersData = data.photographers;
@@ -35,9 +34,9 @@ export default class ProfilPhotographer {
     new MediaConstructor().displayMedia(photographerMedias);
 
     const modal = data.photographers;
-    const photographerMordal = id
+    const photographerModal = id
       ? modal.filter((photographer) => photographer.id == id)
       : [];
-    new Modal().displayModal(photographerMordal);
+    new Modal().displayModal(photographerModal);
   }
 }
