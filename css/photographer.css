@@ -84,7 +84,10 @@
 
 .article-media {
   margin: auto;
-  padding: 0.9em;
+}
+
+.card {
+  max-width: 350px;
 }
 
 .photo-card-img {
@@ -109,6 +112,11 @@
   border-radius: 5px;
   background: #c4c4c4;
   box-shadow: 0px 4px 12px rgb(0 0 0 0.25);
+  padding: 0em;
+}
+
+video {
+  margin-top: 2.8em;
 }
 
 .card-title {
@@ -122,10 +130,19 @@
   margin-bottom: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .number-likes {
   font-size: 1.2em;
+  padding-left: 1em;
+  white-space: nowrap;
+}
+
+iframe img {
+  height: 10px;
+  width: 100%;
+  box-sizing: content-box;
 }
 
 .modal {

@@ -1,6 +1,8 @@
 import MediaConstructor from "./mediaConstructor.js";
 import Modal from "./modal.js";
 import Form from "./form.js";
+// eslint-disable-next-line no-unused-vars
+import Likes from "./likes.js";
 export default class ProfilPhotographer {
   static displayProfilPhotographer(data) {
     let photographersData = data.photographers;
@@ -42,5 +44,6 @@ export default class ProfilPhotographer {
       : [];
     new Modal().displayModal(photographerModal);
     new Form().displayForm();
+    // new Likes().counterlikes(data);
   }
 }

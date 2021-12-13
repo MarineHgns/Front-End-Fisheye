@@ -6,13 +6,13 @@ export default class MediaConstructor {
   displayMedia(photographerMedias) {
     photographerMedias.map((media) => {
       if (media.image) {
-        new Lightbox().displayLightbox(media);
         new ImageBuilder().displayImage(media);
+        new Lightbox().displayLightbox(media);
         return;
       }
       if (media.video) {
-        new Lightbox().displayLightbox(media);
         new VideoBuilder().displayVideo(media);
+        new Lightbox().displayLightbox(media);
         return;
       }
     });
