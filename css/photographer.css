@@ -40,6 +40,8 @@
   object-fit: cover;
   margin-bottom: 0.4em;
   background-color: salmon;
+  box-shadow: 0px 1px 5px black;
+  margin-left: 1em;
 }
 
 .contact_button {
@@ -88,6 +90,7 @@
 
 .card {
   max-width: 350px;
+  margin: 2em;
 }
 
 .photo-card-img {
@@ -99,9 +102,68 @@
   max-height: 100%;
   border-radius: 5px;
   background: #c4c4c4;
-  box-shadow: 0px 4px 12px rgb(0 0 0 0.25);
+  box-shadow: 0px 4px 12px black;
   margin-top: 2em;
 }
+
+#lightbox {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+  background: rgba(255, 252, 252, 0.8);
+}
+
+.photo-card-img-lightbox {
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  width: 1000px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3.6em;
+}
+
+.close-lightbox-icon {
+  position: absolute;
+  right: 2em;
+  top: 1em;
+  color: #911c1c;
+  font-size: 2em;
+}
+
+.left-arrow-lightbox {
+  position: absolute;
+  top: 45%;
+  color: #911c1c;
+  font-size: 2em;
+}
+
+.right-arrow-lightbox {
+  position: absolute;
+  top: 44%;
+  right: 0.8em;
+  color: #911c1c;
+  font-size: 2em;
+}
+
+#lightbox-media img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+#lightbox-name {
+  color: #911c1c;
+  font-size: 2em;
+  padding-left: 3em;
+  padding-top: 0.1em;
+}
+
 .photo-card-video {
   height: 300px;
   width: 350px;
@@ -111,7 +173,7 @@
   max-height: 100%;
   border-radius: 5px;
   background: #c4c4c4;
-  box-shadow: 0px 4px 12px rgb(0 0 0 0.25);
+  box-shadow: 0px 4px 12px black;
   padding: 0em;
 }
 

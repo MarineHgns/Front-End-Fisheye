@@ -6,7 +6,7 @@ export default class ImageBuilder {
     articleMedias.className = "article-media";
     const templateMedia = `
           <div class="card">
-          
+          <div class="media-${image.id}">
            <img class="photo-card-img" src="../${imageGallery}/${image.image}" >
           
               <div class="paragraph-gallery">
@@ -15,6 +15,7 @@ export default class ImageBuilder {
                      <span class="like-number">${image.likes}</span>
                      <i class="likes like-${image.id} far fa-heart " aria-label="likes" roles="button" aria-hidden="true"></i>
                   </div>
+              </div>
               </div>
           </div>
           `;

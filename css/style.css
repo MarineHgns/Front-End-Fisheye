@@ -84,4 +84,5 @@ h2 {
   object-fit: cover;
   margin-bottom: 0.4em;
   background-color: salmon;
+  box-shadow: 0px 1px 8px black;
 }

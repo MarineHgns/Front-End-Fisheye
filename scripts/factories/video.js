@@ -10,7 +10,7 @@ export default class VideoBuilder {
 
     const templateMedia = `
             <div class="card">
-                
+            <div class="media-${video.id}">
                 <video controls="controls" class="photo-card-video" src="../${videoGallery}/${video.video}" type="mp4"> </video>
                 
                 <div class="paragraph-gallery">
@@ -19,6 +19,7 @@ export default class VideoBuilder {
                       <span class="like-number">${video.likes}</span>
                       <i class="likes like-${video.id} far fa-heart likes" aria-label="likes" roles="button" aria-hidden="true"></i>
                     </div>
+                  </div>
                 </div>
             </div> 
             `;
