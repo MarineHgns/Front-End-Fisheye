@@ -1,6 +1,7 @@
 import MediaConstructor from "./mediaConstructor.js";
 import Modal from "./modal.js";
 import Form from "./form.js";
+import SortMenu from "./sortMenu.js";
 // eslint-disable-next-line no-unused-vars
 import Likes from "./likes.js";
 export default class ProfilPhotographer {
@@ -31,7 +32,6 @@ export default class ProfilPhotographer {
 
     sectionPhotographerProfil[0].appendChild(article);
     article.innerHTML = templatePhotographerProfil;
-
     const medias = data.media;
     const photographerMedias = id
       ? medias.filter((media) => media.photographerId == id)
@@ -44,6 +44,7 @@ export default class ProfilPhotographer {
       : [];
     new Modal().displayModal(photographerModal);
     new Form().displayForm();
+    new SortMenu().displayResults(data);
     // new Likes().counterlikes(data);
   }
 }

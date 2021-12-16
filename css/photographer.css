@@ -61,6 +61,76 @@
   border: black 4px solid;
 }
 
+nav {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  float: left;
+  width: 85%;
+  position: relative;
+}
+
+nav ul::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;
+  padding: 10px 0px;
+}
+
+nav a:hover {
+  color: orange;
+  border-bottom: 2px solid gold;
+}
+
+.sous {
+  display: none;
+  box-shadow: 0px 1px 2px #ccc;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+nav > ul li:hover .sous {
+  display: block;
+}
+.sous li {
+  float: none;
+  width: 100%;
+  text-align: left;
+}
+.sous a {
+  padding: 10px;
+  border-bottom: none;
+}
+.sous a:hover {
+  border-bottom: none;
+  background-color: RGBa(200, 200, 200, 0.1);
+}
+.deroulant > a::after {
+  content: " ▼";
+  font-size: 12px;
+}
+
 #photo-name {
   font-size: 2.9em;
   padding-top: 1em;
@@ -119,10 +189,10 @@
 
 .photo-card-img-lightbox {
   display: block;
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 90%;
+  max-height: 90%;
   width: 1000px;
-  height: 600px;
+  height: 700px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3.6em;
@@ -158,9 +228,10 @@
 }
 
 #lightbox-name {
+  position: absolute;
   color: #911c1c;
   font-size: 2em;
-  padding-left: 3em;
+  padding-left: 23%;
   padding-top: 0.1em;
 }
 
