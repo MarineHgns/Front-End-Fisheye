@@ -3,11 +3,11 @@
 
 // import MediaConstructor from "./mediaConstructor.js";
 export default class SortMenu {
-  displayResults(media) {
-    let medias = media.media;
+  displayResults(photographerMedias) {
+    let medias = photographerMedias;
+    // console.log(medias[0]);
     let btnDate = document.querySelector(".date");
     let btnPopularity = document.querySelector(".popularity");
-    let likes = [medias.likes];
 
     function byDate() {
       medias.sort(function (a, b) {
@@ -16,11 +16,12 @@ export default class SortMenu {
     }
 
     btnDate.addEventListener("click", byDate);
+    // console.log(medias);
 
-    function byPopularity(x, y) {
-      return y - x;
-    }
-    likes.sort(byPopularity);
-    btnPopularity.addEventListener("click", byPopularity);
+    // function byPopularity(x, y) {
+    //   return y - x;
+    // }
+    // likes.sort(byPopularity);
+    // btnPopularity.addEventListener("click", byPopularity);
   }
 }

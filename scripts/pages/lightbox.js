@@ -1,87 +1,77 @@
 export default class Lightbox {
   displayLightbox(media) {
-    console.log(media);
-    // let mediaImage = [media.image];
-    // let video = [media.video];
-    // video = [video.video];
-    // let videoTitle = video.video;
-    // let medias = mediaImage.concat(video);
-    // let videoGallery = `assets/photographers/${video.photographerId}`;
-    let mediaId = media.id;
+    let medias = document.querySelector(".item-media");
+    // let mediaId = media.id;
 
-    let currentMedia = document.querySelectorAll("." + "media-" + mediaId);
-    let currentMediaName = [media.title];
-    let boxLightbox = document.getElementById("box-lightbox");
+    let boxLightbox = document.getElementById("lightbox_modal");
+    let templateMedias = document.querySelector(".medias_all");
 
-    // console.log(mediaId);
-    currentMedia[0].addEventListener("click", launchLightbox);
+    const imageSelected = document.querySelectorAll(".media_link");
+    medias.addEventListener("click", launchLightbox);
+
     function launchLightbox() {
       boxLightbox.style.display = "block";
 
       let templateBoxLightbox = `<article id="lightbox" class= "lightbox" role='dialog'>
                                 <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
                                 <span class="fas fa-chevron-left left-arrow-lightbox arrow" id="prev" role="button" title="Previous media"></span>
-                                <iframe class="photo-card-img-lightbox" src="../assets/photographers/${media.photographerId}/${media.image}"></iframe>
+                                <div class="lightbox-media">
+                                </div>
                                 <span class="fas fa-chevron-right right-arrow-lightbox arrow" id="next" role="button" title="Next media"></span>
-                                <div id="lightbox-media"></div>
-                                <div id="lightbox-name">${currentMediaName}</div>
                                 </article>`;
-
       boxLightbox.innerHTML = templateBoxLightbox;
 
-      if (!media.image) {
-        let templateBoxLightbox = `<article id="lightbox" class= "lightbox" role='dialog'>
-                                <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
-                                <span class="fas fa-chevron-left left-arrow-lightbox arrow" id="prev" role="button" title="Previous media"></span>
-                                <iframe class="photo-card-img-lightbox" src="../assets/photographers/${media.photographerId}/${media.video}"></iframe>
-                                <span class="fas fa-chevron-right right-arrow-lightbox arrow" id="next" role="button" title="Next media"></span>
-                                <div id="lightbox-media"></div>
-                                <div id="lightbox-name">${videoTitle}</div>
-                                </article>`;
+      let lightboxMedia = document.querySelector(".lightbox-media");
+      templateMedias.appendChild(lightboxMedia);
+      console.log(templateMedias);
 
-        boxLightbox.innerHTML = templateBoxLightbox;
-      }
+      // let closeBtn = document.querySelector(".close-lightbox-icon");
+      // closeBtn.addEventListener("click", closeLightbox);
 
-      let closeBtn = document.querySelector(".close-lightbox-icon");
-      closeBtn.addEventListener("click", closeLightbox);
+      // function closeLightbox() {
+      //   boxLightbox.style.display = "none";
+      // }
+      // ////////
 
-      function closeLightbox() {
-        boxLightbox.style.display = "none";
-      }
+      // let linkPrevLightBox = document.querySelector(".left-arrow-lightbox");
+      // linkPrevLightBox.addEventListener("click", (event) => {
+      //   event.preventDefault();
+      //   plusSlides(-1);
+      // });
 
-      let slides = currentMedia;
-      console.log(slides);
+      // let linkNextLightBox = document.querySelector(".right-arrow-lightbox");
+      // linkNextLightBox.addEventListener("click", (event) => {
+      //   event.preventDefault();
+      //   plusSlides(1);
+      // });
 
-      let slideIndex = slides.length;
-      showSlides(slideIndex);
+      // let slideIndex = 1;
+      // showSlides(slideIndex);
 
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
-      }
+      // function plusSlides(n) {
+      //   showSlides((slideIndex += n));
+      // }
 
-      function showSlides(n) {
-        let i;
+      // function currentSlide(n) {
+      //   showSlides((slideIndex = n));
+      // }
 
-        slideIndex += n;
-        let slides = currentMedia;
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
+      // function showSlides(n) {
+      //   let i;
+      //   let slides = templateMedias;
+      //   console.log(slides);
+      //   if (n > slides.length) {
+      //     slideIndex = 1;
+      //   }
+      //   if (n < 1) {
+      //     slideIndex = slides.length;
+      //   }
+      //   for (i = 0; i < slides.length; i++) {
+      //     slides[i].style.display = "none";
+      //   }
 
-        slides[slideIndex - 1].style.display = "block";
-      }
-
-      let linkPrevLightBox = document.querySelector(".left-arrow-lightbox");
-      linkPrevLightBox.addEventListener("click", showSlides(1));
-
-      let linkNextLightBox = document.querySelector(".right-arrow-lightbox");
-      linkNextLightBox.addEventListener("click", showSlides(-1));
+      //   slides[slideIndex - 1].style.display = "block";
+      // }
     }
   }
 }

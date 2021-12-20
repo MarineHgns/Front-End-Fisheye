@@ -1,6 +1,6 @@
 import ImageBuilder from "../factories/image.js";
 import VideoBuilder from "../factories/video.js";
-import Lightbox from "./lightbox.js";
+import Lightbox from "../pages/lightbox.js";
 
 export default class MediaConstructor {
   displayMedia(photographerMedias) {
@@ -12,7 +12,7 @@ export default class MediaConstructor {
       }
       if (media.video) {
         new VideoBuilder().displayVideo(media);
-        new Lightbox().displayLightbox(media);
+        new Lightbox().displayLightbox(photographerMedias);
         return;
       }
     });
