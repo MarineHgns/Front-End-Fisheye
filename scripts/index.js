@@ -9,7 +9,7 @@ function dispatch() {
     if (
       window.location.pathname.includes("/photographer.html") ||
       window.location.pathname.includes(
-        "https://marinehgns.github.io/Huygensmarine_6_25112021-Front-End-Fisheye/photographer.html"
+        "marinehgns.github.io/Huygensmarine_6_25112021-Front-End-Fisheye/photographer.html"
       )
     ) {
       ProfilPhotographer.displayProfilPhotographer(data);
