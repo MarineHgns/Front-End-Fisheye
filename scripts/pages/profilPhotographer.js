@@ -38,7 +38,6 @@ export default class ProfilPhotographer {
       ? medias.filter((media) => media.photographerId == id)
       : [];
     new MediaConstructor().displayMedia(photographerMedias);
-    // new Likes().counterLikes(photographerMedias);
     new SortMenu().displayResults(photographerMedias);
 
     const modal = data.photographers;

@@ -365,3 +365,23 @@ textarea {
 .first-form {
   margin-top: 1.8em;
 }
+
+#box-likes-prices {
+  align-items: center;
+  background: #db8876;
+  border-radius: 0.3rem;
+  bottom: 0;
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 500;
+  height: 4rem;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed;
+  right: 2.5rem;
+  width: 18rem;
+}
+
+#box-likes-prices .fa-heart {
+  padding-left: 1em;
+}

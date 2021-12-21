@@ -1,32 +1,42 @@
-function counterLikes(media) {
-  const { id, photographerId, likes, price } = media;
-  console.log(media);
-  //list media selon id
-  function TotalLikesDOM() {
-    const $wrapper = document.getElementById("box-likes-prices");
-    console.log($wrapper);
-    let cardTotalLikes = "";
+// import allLikes from "../factories/mediaConstructor.js";
+export default class TotalLikes {
+  static BoxLikesPrices(data) {
+    let photographersData = data.photographers;
+    let photographerMedias = data.media;
 
-    cardTotalLikes += `<div class="total_likes">`;
+    let allLikes = 0;
 
-    cardTotalLikes += `<h3 class="total_likes_txt">${likes}</h3>`;
+    let id = window.location.search.split("id=")[1];
+    let photographers = !id
+      ? photographersData
+      : photographersData.filter((photographer) => photographer.id == id);
 
-    cardTotalLikes += `<i class="fas fa-heart"></i>`;
+    let photographerId = window.location.search.split("id=")[1];
+    photographerMedias = !photographerId
+      ? photographerMedias
+      : photographerMedias.filter(
+          (photographer) => photographer.photographerId == photographerId
+        );
 
-    cardTotalLikes += ` </div>
-    <div class="price">
-    <p>${price}&euro; / jour</p>
-    </div>
-    `;
+    photographerMedias.forEach((element) => {
+      allLikes += parseInt(element.likes);
+    });
 
-    $wrapper.innerHTML = cardTotalLikes;
-    return $wrapper;
+    photographers.map((photographer) => {
+      photographers = photographer;
+
+      let box = document.querySelector("#box-likes-prices");
+      let templateBoxLikesPrices = `<div class="total_likes"> 
+                                  <h3 class="total_likes_txt">${allLikes}<i class="fas fa-heart"></i></h3>
+                                  </div>
+                                  <div class="price">
+                                  <p>${photographers.price}&euro; / jour</p>
+                                  </div>`;
+      box.innerHTML = templateBoxLikesPrices;
+    });
   }
-  return {
-    id,
-    photographerId,
-    likes,
-    price,
-    TotalLikesDOM,
-  };
+}
+
+export class IsLiked {
+  AddLike(data) {}
 }
