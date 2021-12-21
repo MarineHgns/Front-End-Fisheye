@@ -18,7 +18,7 @@ export default class VideoBuilder {
                   </span>
                     <div class="number-likes">
                       <span class="like-number">${video.likes}</span>
-                      <i class="likes like-${video.id} far fa-heart likes" aria-label="likes" roles="button" aria-hidden="true"></i>
+                      <i class="add-likes like-${video.id} far fa-heart likes" aria-label="likes" roles="button" aria-hidden="true"></i>
                   </div>
                 </div>
             </div> 

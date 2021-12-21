@@ -8,14 +8,15 @@ export default class ImageBuilder {
           <div class="card">
           <div class="item-media" id="test">
           <a href="#" class="media_link" data-mediaid="${image.id}" role="button" aria-label="${image.alt}">
-           <img class="photo-card-img medias_all" src="../${imageGallery}/${image.image}" >
+           <img class="photo-card-img medias_all" src="../${imageGallery}/${image.image}"/>
+           </a>
            </div>
               <span class="paragraph-gallery photograph-catalog-txt">
                 <h3 class="card-title">${image.title}</h3>
                 </div>
                   <div class="number-likes">
                      <span class="like-number">${image.likes}</span>
-                     <i class="likes like-${image.id} far fa-heart " aria-label="likes" roles="button" aria-hidden="true"></i>
+                     <i class="add-likes like-${image.id} far fa-heart " aria-label="likes" roles="button" aria-hidden="true"></i>
                   </span>
               </div>
           </div>

@@ -37,6 +37,14 @@ export default class TotalLikes {
   }
 }
 
-export class IsLiked {
-  AddLike(data) {}
-}
+// export async function addLikes() {
+//   let btnLiked = document.getElementsByClassName("like-number");
+//   console.log(btnLiked);
+//   btnLiked.addEventListener("click", liked);
+
+//   function liked() {
+//     btnLiked.target.classList.replace("fas", "far");
+//   }
+// }
+
+// addLikes();
