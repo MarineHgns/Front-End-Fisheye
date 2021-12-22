@@ -27,7 +27,7 @@ export default class TotalLikes {
 
       let box = document.querySelector("#box-likes-prices");
       let templateBoxLikesPrices = `<div class="total_likes"> 
-                                  <h3 class="total_likes_txt">${allLikes}<i class="fas fa-heart"></i></h3>
+                                  <h3 class="total_likes_counter">${allLikes}</h3><i class="fas fa-heart"></i>
                                   </div>
                                   <div class="price">
                                   <p>${photographers.price}&euro; / jour</p>
@@ -36,15 +36,3 @@ export default class TotalLikes {
     });
   }
 }
-
-// export async function addLikes() {
-//   let btnLiked = document.getElementsByClassName("like-number");
-//   console.log(btnLiked);
-//   btnLiked.addEventListener("click", liked);
-
-//   function liked() {
-//     btnLiked.target.classList.replace("fas", "far");
-//   }
-// }
-
-// addLikes();

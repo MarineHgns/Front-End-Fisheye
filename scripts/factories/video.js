@@ -14,11 +14,11 @@ export default class VideoBuilder {
                 <video controls="controls" class="photo-card-video" src="../${videoGallery}/${video.video}" type="mp4"> </video>
                 </div>
                 <span class="paragraph-gallery">
-                  <h3 class="card-title">${videoTitle}</h3>
-                  </span>
+                  <h3 class="card-title video-title">${videoTitle}</h3>
                     <div class="number-likes">
-                      <span class="like-number">${video.likes}</span>
-                      <i class="add-likes like-${video.id} far fa-heart likes" aria-label="likes" roles="button" aria-hidden="true"></i>
+                      <span class="like-number like-number-video">${video.likes}
+                      <i class="add-likes like-${video.id} far fa-heart likes" aria-label="likes" roles="button" aria-hidden="true"></i></span>
+                  </span>
                   </div>
                 </div>
             </div> 

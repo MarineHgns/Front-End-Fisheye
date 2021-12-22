@@ -165,6 +165,7 @@ nav > ul li:hover .sous {
 .card {
   max-width: 350px;
   margin: 2em;
+  position: relative;
 }
 
 .photo-card-img {
@@ -252,6 +253,16 @@ video {
   margin-top: 2.8em;
 }
 
+.video-title {
+  max-width: 6em;
+}
+
+.like-number-video {
+  position: relative;
+  right: 15em;
+  top: 3em;
+}
+
 .card-title {
   color: #911c1c;
   font-family: "DM Sans", sans-serif;
@@ -267,9 +278,13 @@ video {
 }
 
 .number-likes {
-  font-size: 1.2em;
+  font-size: 1.3em;
+  color: #911c1c;
   padding-left: 1em;
   white-space: nowrap;
+  position: relative;
+  top: -3em;
+  left: 14em;
 }
 
 iframe img {
@@ -369,19 +384,26 @@ textarea {
 #box-likes-prices {
   align-items: center;
   background: #db8876;
-  border-radius: 0.3rem;
+  border-radius: 0.3em;
   bottom: 0;
   display: flex;
   font-size: 1.2em;
   font-weight: 500;
-  height: 4rem;
+  height: 4em;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 2em;
   position: fixed;
-  right: 2.5rem;
-  width: 18rem;
+  right: 2.5em;
+  width: 18em;
+}
+
+.total_likes_counter {
+  position: relative;
+  top: 0.5em;
 }
 
 #box-likes-prices .fa-heart {
-  padding-left: 1em;
+  position: relative;
+  top: -2em;
+  right: -3em;
 }
