@@ -3,16 +3,17 @@ export default class AddLike {
     const clickLikes = document.querySelectorAll(".add-likes");
     let counterLikesCard = document.querySelector(".like-number");
 
-    for (const clickHeart of clickLikes) {
+    for (let clickHeart of clickLikes) {
       clickHeart.addEventListener("click", (e) => {
         let classListTarget =
           typeof e.target.classList === "undefined"
             ? []
             : e.target.classList.value.split(" ");
         let hasClassBtn = -1 != classListTarget.indexOf("add-likes");
+
         if (hasClassBtn) {
           let totalLikes = parseInt(
-            document.getElementsByClassName("like-number").innerHTML
+            document.querySelector(".like-number").innerHTML
           );
 
           let counterLike = document.querySelector(".total_likes_counter");

@@ -1,8 +1,5 @@
 export default class VideoBuilder {
   displayVideo(video) {
-    let videoTitle = video.video;
-    videoTitle = videoTitle.replaceAll("_", " ");
-    videoTitle = videoTitle.replace(".mp4", "");
     let videoGallery = `assets/photographers/${video.photographerId}`;
     const sectionMedias = document.getElementById("gallerie");
     let articleMedias = document.createElement("article");
@@ -10,17 +7,19 @@ export default class VideoBuilder {
 
     const templateMedia = `
             <div class="card">
-            <div class="item-media" id="test">
+            <div class="item-media" id="vid${video.id}">
+            <a href="#" class="media_link" data-mediaid="${video.id}" role="button" aria-label="${video.alt}">
                 <video controls="controls" class="photo-card-video" src="../${videoGallery}/${video.video}" type="mp4"> </video>
+                </a>
                 </div>
-                <span class="paragraph-gallery">
-                  <h3 class="card-title video-title">${videoTitle}</h3>
-                    <div class="number-likes">
-                      <span class="like-number like-number-video">${video.likes}
-                      <i class="add-likes like-${video.id} far fa-heart likes" aria-label="likes" roles="button" aria-hidden="true"></i></span>
-                  </span>
-                  </div>
-                </div>
+                <span class="paragraph-gallery photograph-catalog-txt">
+                  <span class="card-title video-title">${video.title}</span>
+                  
+                    <span class="number-likes">
+                      <span class="like-number  id="number-${video.id}">${video.likes}</span>
+                      <i class="add-likes like-${video.id} far fa-heart likes" aria-label="likes" roles="button" aria-hidden="true"></i>
+                   </span>
+                      </span>
             </div> 
             `;
     sectionMedias.appendChild(articleMedias);

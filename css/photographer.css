@@ -189,17 +189,20 @@ nav > ul li:hover .sous {
   right: 0;
   bottom: 0;
   padding: 1em;
-  background: rgba(255, 252, 252, 0.8);
+  background: rgba(255, 252, 252, 0.925);
 }
 
+#lightbox > div > a {
+  display: block;
+  margin: auto;
+}
 .photo-card-img-lightbox {
-  max-width: 80%;
-  max-height: 80%;
-  width: 1000px;
-  max-height: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3.6em;
+  max-width: 85%;
+  max-height: 900px;
+  height: 85%;
+  margin: auto;
+  display: block;
+  padding-top: 3em;
 }
 
 .close-lightbox-icon {
@@ -226,6 +229,15 @@ nav > ul li:hover .sous {
   height: 100%;
   object-fit: contain;
   width: 100%;
+}
+
+.photo-card-video-lightbox {
+  max-width: 85%;
+  max-height: 900px;
+  height: 85%;
+  margin: auto;
+  display: block;
+  padding-top: 3em;
 }
 
 #lightbox-name {
@@ -257,12 +269,6 @@ video {
   max-width: 6em;
 }
 
-.like-number-video {
-  position: relative;
-  right: 15em;
-  top: 3em;
-}
-
 .card-title {
   color: #911c1c;
   font-family: "DM Sans", sans-serif;
@@ -280,11 +286,8 @@ video {
 .number-likes {
   font-size: 1.3em;
   color: #911c1c;
-  padding-left: 1em;
   white-space: nowrap;
   position: relative;
-  top: -3em;
-  left: 14em;
 }
 
 iframe img {

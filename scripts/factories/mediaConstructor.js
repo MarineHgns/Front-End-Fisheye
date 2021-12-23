@@ -12,7 +12,7 @@ export default class MediaConstructor {
       }
       if (media.video) {
         new VideoBuilder().displayVideo(media);
-        new Lightbox().displayLightbox(photographerMedias);
+        new Lightbox().displayLightbox(media);
         return;
       }
     });
