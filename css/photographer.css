@@ -148,7 +148,8 @@ nav > ul li:hover .sous {
   flex-wrap: wrap;
   align-items: center;
   border-radius: 1.5em;
-  margin: 3em;
+  margin: auto;
+  justify-content: space-around;
 }
 
 .paragraph-gallery {
@@ -198,7 +199,7 @@ nav > ul li:hover .sous {
 }
 .photo-card-img-lightbox {
   max-width: 85%;
-  max-height: 900px;
+  max-height: 700px;
   height: 85%;
   margin: auto;
   display: block;
@@ -233,8 +234,8 @@ nav > ul li:hover .sous {
 
 .photo-card-video-lightbox {
   max-width: 85%;
-  max-height: 900px;
-  height: 85%;
+  height: 800px;
+  max-height: 85%;
   margin: auto;
   display: block;
   padding-top: 3em;
@@ -283,6 +284,19 @@ video {
   white-space: nowrap;
 }
 
+.card-title-lightbox {
+  color: #911c1c;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 31px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 50% 50%;
+}
+
 .number-likes {
   font-size: 1.3em;
   color: #911c1c;
@@ -308,6 +322,7 @@ iframe img {
   margin: auto;
   position: relative;
   top: -20em;
+  z-index: 1;
 }
 
 .modal header {

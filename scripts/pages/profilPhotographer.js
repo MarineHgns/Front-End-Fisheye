@@ -1,9 +1,8 @@
-import MediaConstructor from "../factories/mediaConstructor.js";
+// import MediaConstructor from "../factories/mediaConstructor.js";
 import Modal from "./modal.js";
 import Form from "./form.js";
-import SortMenu from "./sortMenu.js";
-// eslint-disable-next-line no-unused-vars
-// import Likes from "./likes.js";
+import DropDownMenu from "./sortMenu.js";
+import MediaConstructor from "../factories/mediaConstructor.js";
 export default class ProfilPhotographer {
   static displayProfilPhotographer(data) {
     let photographersData = data.photographers;
@@ -38,7 +37,8 @@ export default class ProfilPhotographer {
       ? medias.filter((media) => media.photographerId == id)
       : [];
     new MediaConstructor().displayMedia(photographerMedias);
-    new SortMenu().displayResults(photographerMedias);
+
+    new DropDownMenu().dropDown(photographerMedias);
 
     const modal = data.photographers;
     const photographerModal = id
