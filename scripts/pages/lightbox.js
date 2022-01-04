@@ -14,8 +14,15 @@ export default class Lightbox {
                                   <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
                                   <span class="fas fa-chevron-left left-arrow-lightbox arrow" id="prev" role="button" title="Previous media"></span>
                                   <div class="lightbox-media">
-                                    <div class="media_link" data-mediaid="${media.id}" role="button" aria-label="${media.alt}">
-                                      <img class="photo-card-img-lightbox medias_all" src="../${imageGallery}/${media.image}"/>
+                                    <div class="media_link" data-mediaid="${media.id}" role="button" aria-label="${media.alt}">`;
+      if (media.video !== undefined) {
+        templateBoxLightbox += `<video class="photo-card-video-lightbox medias_all" aria-label="${media.alt}" controls>
+        <source src="./assets/photographers/${media.photographerId}/${media.video}" type="video/mp4">
+        </video>`;
+      } else {
+        templateBoxLightbox += `<img class="photo-card-img-lightbox medias_all" src="../${imageGallery}/${media.image}"/>`;
+      }
+      templateBoxLightbox += `
                                       <span class="card-title-lightbox">${media.title}</span>
                                     </div>
                                   </div>

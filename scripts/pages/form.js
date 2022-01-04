@@ -1,6 +1,16 @@
 export default class Form {
   displayForm() {
     const signForm = document.querySelector("#contact-form");
+    const modal = document.querySelector(".modal");
+    const modalThank = document.querySelector(".modal-thank");
+    const closeThank = document.querySelector(".close_btn_thank");
+
+    closeThank.addEventListener("click", closeThanks);
+
+    function closeThanks() {
+      modalThank.style.display = "none";
+    }
+
     signForm.addEventListener("submit", function (e) {
       e.preventDefault();
       if (formValid()) {
@@ -9,7 +19,9 @@ export default class Form {
         document.querySelector("#first").style.border = "none";
         document.querySelector("#last").style.border = "none";
         signForm.reset();
-        alert("Formulaire envoyé!");
+        signForm.style.display = "none";
+        modal.style.display = "none";
+        modalThank.style.display = "block";
       }
     });
 

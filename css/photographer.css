@@ -399,6 +399,32 @@ textarea {
   margin-top: 1.8em;
 }
 
+.modal-thank {
+  border-radius: 5px;
+  background-color: #db8876;
+  width: 50%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8em;
+  padding-left: 10%;
+  margin: auto;
+  position: relative;
+  top: -10em;
+  z-index: 1;
+  font-size: 2.5em;
+}
+
+.close_btn_thank {
+  position: absolute;
+  top: 0.8em;
+  right: 2%;
+  z-index: 1;
+  width: 1em;
+}
+
 #box-likes-prices {
   align-items: center;
   background: #db8876;
