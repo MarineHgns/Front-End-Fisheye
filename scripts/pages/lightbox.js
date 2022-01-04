@@ -90,7 +90,7 @@ export default class Lightbox {
         // Récupérer la zone à modifier
         let mediaLightbox = document.querySelectorAll(".lightbox-media")[0];
         //Puis on modifie avec le nouveau media
-        mediaLightbox.outerHTML = slides[slideIndex];
+        //mediaLightbox.innerHTML = slides[slideIndex];
 
         console.log(slides[slideIndex]);
 

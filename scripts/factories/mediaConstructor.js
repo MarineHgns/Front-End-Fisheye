@@ -27,8 +27,8 @@ export default class MediaConstructor {
             ${media.title}
          </div>
           <div class="number-likes">
-              <span class="like-number" >${media.likes}</span>
-              <i class="add-likes like-${media.id} far fa-heart" data-id="${media.id}" arial-label="likes" roles="button" aria-hidden="true"></i>
+              <span class="like-number" id="media-id" data-id="${media.id}">${media.likes}</span>
+              <i class="add-likes like-${media.id} far fa-heart" arial-label="likes" roles="button" aria-hidden="true"></i>
               </div>
          </div>
          </div>
