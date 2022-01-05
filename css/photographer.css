@@ -157,19 +157,21 @@ nav > ul li:hover .sous {
   flex-direction: row;
   justify-content: space-between;
   color: #911c1c;
+  max-width: 80%;
+  padding-left: 10%;
 }
 
 .article-media {
   margin: auto;
 }
 
-.card {
+/* .card {
   max-width: 350px;
   margin: 2em;
   position: relative;
-}
+} */
 
-.photo-card-img {
+/* .photo-card-img {
   height: 300px;
   width: 350px;
   object-fit: cover;
@@ -180,7 +182,7 @@ nav > ul li:hover .sous {
   background: #c4c4c4;
   box-shadow: 0px 4px 12px black;
   margin-top: 2em;
-}
+} */
 
 #lightbox {
   position: fixed;
@@ -242,11 +244,10 @@ nav > ul li:hover .sous {
 }
 
 #lightbox-name {
-  position: absolute;
   color: #911c1c;
   font-size: 2em;
-  padding-left: 23%;
-  padding-top: 0.1em;
+  text-align: center;
+  padding-top: 0.8em;
 }
 
 .photo-card-video {
@@ -263,11 +264,27 @@ nav > ul li:hover .sous {
 }
 
 video {
-  margin-top: 2.8em;
+  max-width: 350px;
+}
+
+.itemMedia {
+  height: 300px;
+  width: 350px;
+  object-fit: cover;
+  object-position: 40% 40%;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+  background: #c4c4c4;
+  box-shadow: 0px 4px 12px black;
+  margin: 1em;
+  /* margin-right: 2.4em;
+  margin-left: 2.4em; */
+  justify-content: space-around;
 }
 
 .video-title {
-  max-width: 6em;
+  max-width: 3em;
 }
 
 .card-title {
@@ -275,13 +292,13 @@ video {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 1.3em;
   line-height: 31px;
-  margin-top: 0em;
-  margin-bottom: 0;
+  margin-top: -0.3em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  max-width: 10em;
 }
 
 .card-title-lightbox {
@@ -298,16 +315,11 @@ video {
 }
 
 .number-likes {
-  font-size: 1.3em;
+  font-size: 1.2em;
   color: #911c1c;
   white-space: nowrap;
   position: relative;
-}
-
-iframe img {
-  height: 10px;
-  width: 100%;
-  box-sizing: content-box;
+  margin-top: -0.3em;
 }
 
 .modal {
