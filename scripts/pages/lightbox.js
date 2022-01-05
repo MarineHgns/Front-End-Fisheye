@@ -38,8 +38,25 @@ export default class Lightbox {
       this.showSlides(1);
     });
 
+    // navigation with arrow keys <>
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "ArrowLeft" || e.code === "Comma") {
+        this.showSlides(-1);
+      } else if (e.code === "ArrowRight" || e.code === "Period") {
+        this.showSlides(1);
+      }
+    });
+
     closeBtn.addEventListener("click", () => this.closeLightbox());
+
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "Escape") {
+        window.location.reload(true);
+        this.closeLightbox();
+      }
+    });
   }
+
   displayCurrentMedia() {
     let mediaCurrent = this.medias[this.index];
     let divMedia = mediaCurrent.image
