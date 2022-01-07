@@ -6,6 +6,7 @@ export default class MediaConstructor {
   displayMedia(photographerMedias) {
     photographerMedias.map((media, index) => {
       let articleMedia;
+
       if (media.image) {
         articleMedia = new ImageBuilder().displayImage(media);
       }

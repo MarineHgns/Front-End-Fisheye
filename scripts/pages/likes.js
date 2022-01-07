@@ -27,10 +27,10 @@ export default class TotalLikes {
 
       let box = document.querySelector("#box-likes-prices");
       let templateBoxLikesPrices = `<div class="total_likes"> 
-                                  <h3 class="total_likes_counter">${allLikes}</h3><i class="fas fa-heart"></i>
+                                  <h3 class="total_likes_counter" tabindex="1" aria-label="${allLikes} likes">${allLikes}</h3><i class="fas fa-heart"></i>
                                   </div>
                                   <div class="price">
-                                  <p>${photographers.price}&euro; / jour</p>
+                                  <p tabindex="1" aria-label="${photographers.price}euro">${photographers.price}&euro; / jour</p>
                                   </div>`;
       box.innerHTML = templateBoxLikesPrices;
     });

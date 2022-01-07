@@ -13,7 +13,7 @@ export default class Lightbox {
   displayLightbox() {
     this.boxLightbox.style.display = "block";
 
-    let templateBoxLightbox = `<article id="lightbox" class= "lightbox" role='dialog'>
+    let templateBoxLightbox = `<article id="lightbox" class= "lightbox" role='dialog' aria-label="lightbox ouverte">
                                     <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
                                     <span class="fas fa-chevron-left left-arrow-lightbox arrow" id="prev" role="button" title="Previous media"></span>    
                                     <div id="containMediaLightBox"></div>                                      
@@ -88,8 +88,8 @@ export default class Lightbox {
   }
 
   imgLightbox() {
-    let test = document.querySelector(".itemMedia");
-    test.classList.toggle("itemMedia", false);
-    test.classList.toggle("photo-card-img-lightbox", true);
+    let imageLightbox = document.querySelector(".itemMedia");
+    imageLightbox.classList.toggle("itemMedia", false);
+    imageLightbox.classList.toggle("photo-card-img-lightbox", true);
   }
 }

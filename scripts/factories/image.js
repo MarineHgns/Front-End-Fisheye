@@ -7,14 +7,14 @@ export default class ImageBuilder {
     let divInfo = document.createElement("div");
     articleMedias.className = "article-media";
 
-    divMedias.innerHTML = `<img class="itemMedia" src="../${imageGallery}/${image.image}" >`;
+    divMedias.innerHTML = `<img class="itemMedia" tabindex="1" aria-label="${image.alt}" src="../${imageGallery}/${image.image}"/>`;
 
     divInfo.innerHTML = `
       <div class="paragraph-gallery">
-        <h3 class="card-title">${image.title}</h3>
+        <h3 class="card-title" tabindex="1">${image.title}</h3>
           <div class="number-likes">
-              <span class="like-number">${image.likes}</span>
-              <i class="add-likes like-${image.id} far fa-heart " aria-label="likes" roles="button" aria-hidden="true"></i>
+              <span class="like-number" tabindex="1">${image.likes}</span>
+              <i class="add-likes like-${image.id} far fa-heart" aria-label="cliquez pour liker" tabindex="1" aria-label="likes" roles="button" aria-hidden="true"></i>
           </div>
           </div>
       </div>  `;

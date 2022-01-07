@@ -4,12 +4,11 @@ export default class DropDownMenu {
     let popBtn = document.querySelector(".pop");
     let dateBtn = document.querySelector(".date");
     let titleBtn = document.querySelector(".title");
+    console.log(popBtn);
 
     function sortDate(a, b) {
       if (a.date > b.date) return -1;
       if (a.date < b.date) return 1;
-      alert("ok date");
-      return 0;
     }
 
     function sortPop(a, b) {
@@ -30,7 +29,7 @@ export default class DropDownMenu {
     dateBtn.addEventListener("click", sortDate);
     titleBtn.addEventListener("click", sortTitle);
 
-    photographerMedias.sort(sortTitle);
+    photographerMedias.sort(sortDate);
     // console.log(photographerMedias);
   }
 }

@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <a href="index.html" aria-label="retour menu principal"><img src="assets/images/logo.png"   class="logo" alt="Fisheye"/></a>
+      <a href="index.html" aria-label="retour menu principal" tabindex="1"><img src="assets/images/logo.png"   class="logo" alt="Fisheye"/></a>
     </header> 
     <main id="main">
       <div class="photograph-header">
@@ -18,15 +18,15 @@
       </div>
     </div>
     </main>
-        <nav class="dropdownMenuNav">
+        <nav class="dropdownMenuNav" tabindex="1">
               <label for="dropdownMenuNav">Trier par</label>
               <select
                 id="dropdownMenu"
                 class="dropdownMenu"
                 aria-label="Trier Par"
-                tabindex="4"
+                tabindex="1"
               >
-                <option value="popularité" class="dropdown-menu-item pop">Popularité</option>
+                <option value="popularité" class="dropdown-menu-item pop">Popularité</option> 
                 <option value="date" class="dropdown-menu-item date">Date</option>
                 <option value="titre" class="dropdown-menu-item title">Titre</option>
               </select>

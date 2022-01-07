@@ -19,14 +19,14 @@ export default class ProfilPhotographer {
     article.classList.add("header-photographer-profile");
     const templatePhotographerProfil = `
                 <div class='ph-infos'>
-                    <h2 class="photographe-name">${photographers[0].name}</h2>
+                    <h2 class="photographe-name" aria-label="profil de ${photographers[0].name} ${photographers[0].city}" tabindex="1">${photographers[0].name}</h2>
                       <p class="localisation">${photographers[0].city}, ${photographers[0].country}</p>
                         <p class="citation">${photographers[0].tagline}</p>
                 </div>
                 <button class="contact_button ph-profile-btn" type="button" 
                 aria-haspopup="dialog"
-                aria-controls="dialog" title="Contactez-moi">Contactez-moi</button>
-                <img src="${picture}" alt="${photographers[0].name}">
+                aria-controls="dialog" title="Contactez-moi" tabindex="1">Contactez-moi</button>
+                <img src="${picture}" alt="Photo de ${photographers[0].name}" tabindex="1">
             `;
 
     sectionPhotographerProfil[0].appendChild(article);
