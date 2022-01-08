@@ -89,6 +89,11 @@ select {
   width: 170px;
 }
 
+.test::after {
+  content: "\f078";
+  transform: rotate(90deg);
+}
+
 option {
   font-size: 0.9em;
   display: block;
