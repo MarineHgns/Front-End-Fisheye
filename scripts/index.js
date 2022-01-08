@@ -5,7 +5,12 @@ import TotalLikes from "./pages/likes.js";
 import AddLikes from "./pages/addLikes.js";
 function dispatch() {
   new ApiFisheye().getData().then((data) => {
-    if (window.location.href.includes("/photographer.html")) {
+    if (
+      window.location.href.includes("photographer.html") ||
+      window.location.href.includes(
+        "Huygensmarine_6_25112021-Front-End-Fisheye/photographer.html"
+      )
+    ) {
       ProfilPhotographer.displayProfilPhotographer(data);
       TotalLikes.BoxLikesPrices(data);
       AddLikes.BtnAdd(data);
