@@ -10,38 +10,26 @@
   </head>
   <body>
     <header>
-      <a href="index.html" aria-label="retour menu principal" tabindex="1"><img src="assets/images/logo.png"   class="logo" alt="Fisheye"/></a>
+      <a href="index.html" aria-label="retour menu principal" tabindex="1"><img src="assets/images/logo.png" class="logo" alt="Fisheye"/>
+      </a>
     </header> 
     <main id="main">
       <div class="photograph-header">
-      <div class="photographer_section_header">
+        <div class="photographer_section_header">
+        </div>
       </div>
-    </div>
     </main>
-    <nav class="dropdownMenuNav">
-      <label for="dropdownMenuNav">Trier par</label>
-      <select
-        id="dropdownMenu"
-        class="dropdownMenu"
-        aria-label="Trier Par"
-        tabindex="4"
-      >
-        <option value="popularité" class="dropdown-menu-item pop" id="popularité">Popularité</option>
-        <option value="date" class="dropdown-menu-item date" id="date">Date</option>
-        <option value="titre" class="dropdown-menu-item title" id="titre">Titre</option>
-      </select>
-</nav>
     <section>
-    <div id="contact_modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1" aria-labelledby="dialog-form" 
-    aria-describedby="dialog-desc">
-			<div class="modal">
-				<header>
-          
-          <h2 class="contact-me">Contactez-moi </h2>
-          <span id="photo-name"></span>
-          <img src="assets/icons/close.svg" alt="bouton croix fermeture" class="close_btn" aria-label="bouton croix fermeture" title="fermeture" data-dismiss="dialog">
-          
-        </header>
+      <div id="contact_modal" role="dialog" aria-modal="true" aria-labelledby="contact-form">
+        <div class="modal" tabindex="1">
+          <header>
+            <h2 class="contact-me" aria-label="contactez-moi" tabindex="1">Contactez-moi 
+            </h2>
+         
+       <span id="photo-name" >
+          </span>
+          <img src="assets/icons/close.svg" alt="bouton croix fermeture" class="close_btn" aria-label="bouton croix fermeture" title="fermeture" data-dismiss="dialog" tabindex="1">
+          </header>
 				<form
               name="contact-form"
               method="get"
@@ -49,67 +37,97 @@
             >
               <div
                 class="first-form">
-                <label for="first" aria-label="prénom">Prénom</label>
+                <label for="first" aria-label="prénom" tabindex="1">Prénom
+                </label>
                 <input
                   class="text-control"
                   type="text"
                   id="first"
                   name="first" 
-                  autocomplete="given-name" 
+                  autocomplete="given-name" tabindex="1"
                 />
-                <span class="firstError error" style="display: none;">Le prénom doit faire plus de 2 caractères.</span>
+                <span class="firstError error" style="display: none;" tabindex="1">Le prénom doit faire plus de 2 caractères.
+                </span>
               </div>
+
               <div
                 class="last-form">
-                <label for="last" aria-label="nom">Nom</label>
+                <label for="last" aria-label="nom" tabindex="1">Nom
+                </label>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last" 
-                  autocomplete="family-name"
+                  autocomplete="family-name" tabindex="1"
                 />
-                <span class="lastError error" style="display: none;">Le nom doit faire plus de 2 caractères.</span>
+                <span class="lastError error" style="display: none;" tabindex="1">Le nom doit faire plus de 2 caractères.
+                </span>
               </div>
+
               <div
                 class="email-form">
-                <label for="email" aria-label="email">E-mail</label>
+                <label for="email" aria-label="email" tabindex="1">E-mail
+                </label>
                 <input
                   class="text-control"
                   type="text"
                   id="email"
                   name="email"
-                  autocomplete="email"
+                  autocomplete="email" tabindex="1"
                 />
-                <span class="emailError error" style="display: none;">L'adresse mail est incorrecte</span>
+                <span class="emailError error" style="display: none;" tabindex="1">L'adresse mail est incorrecte
+                </span>
               </div>
 
               <div
                 class="message-form">
-                <label for="message" aria-label="your message">Votre message</label>
+                <label for="message" aria-label="your message" tabindex="1">Votre message
+                </label>
               <textarea
                   class="text-control"
                   id="message"
-                  name="message"  placeholder="Message..." rows="5"></textarea>
-                <span class="messageError error" style="display: none;">Le message est vide</span>
+                  name="message" tabindex="1" rows="5"></textarea>
+              <span class="messageError error" style="display: none;" tabindex="1">Le message est vide
+              </span>
               </div>
-              <button class="contact_button" aria-label="envoyer" id="submit" class="contact_send">Envoyer</button>  
-      
-            </form>
-            
-			</div>
+              <button class="contact_button" aria-label="envoyer" id="submit" tabindex="1">Envoyer
+              </button>  
+        </form>
+      </div>
     </div>
-      <div class="modal-thank" aria-label="message envoyé" style="display: none;"> Le message a été envoyé !
-        <img src="assets/icons/close.svg" alt="bouton croix fermeture" class="close_btn_thank" aria-label="bouton croix fermeture" title="fermeture" data-dismiss="dialog">
-        
-		</div>
+      <div class="modal-thank" aria-label="message envoyé" style="display: none;" tabindex="1"> Le message a été envoyé !
+        <img src="assets/icons/close.svg" alt="bouton croix fermeture" tabindex="1" class="close_btn_thank" aria-label="bouton croix fermeture" title="fermeture" data-dismiss="dialog">
+      </div>
   </section>
-    <aside id="lightbox_modal" aria-hidden="true" style="display: none;">
-      </aside>
-    <div id="gallerie" class="gallerie" aria-label="portfolio-photographe"></div>
-    <footer>
-      <div id="box-likes-prices" aria-label="Counter likes and prices photographer's"></div>
-    </footer>
+    <nav class="dropdownMenuNav">
+      Trier par
+      <label for="dropdownMenu" id="dropdownMenuL">
+        <select
+          id="dropdownMenu"
+          class="dropdownMenu"
+          aria-label="Trier Par"
+          tabindex="3"
+        >
+      
+          <option value="popularité" class="dropdown-menu-item pop" id="popularité">Popularité
+          </option>
+          <option value="date" class="dropdown-menu-item date" id="date">Date 
+          </option>
+          <option value="titre" class="dropdown-menu-item title" id="titre">Titre
+          </option>
+        </select>  
+      </label>
+    </nav>
+    
+  <section>  
+    <aside id="box-likes-prices">
+    </aside> 
+    <aside id="lightbox_modal" style="display: none;">
+    </aside> 
+    <aside id="gallerie" class="gallerie" aria-label="portfolio-photographe">
+    </aside>
+  </section>
     
       
     <script src="/scripts/index.js" type="module"></script>

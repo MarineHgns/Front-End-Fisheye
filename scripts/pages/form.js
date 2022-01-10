@@ -6,22 +6,42 @@ export default class Form {
     const closeThank = document.querySelector(".close_btn_thank");
 
     closeThank.addEventListener("click", closeThanks);
+    closeThank.addEventListener("keyup", function (event) {
+      if (event.code === "Enter") {
+        closeThanks();
+      }
+    });
 
     function closeThanks() {
       modalThank.style.display = "none";
     }
 
     signForm.addEventListener("submit", function (e) {
+      let first = document.getElementById("first");
+      let last = document.getElementById("last");
       e.preventDefault();
       if (formValid()) {
         email.style.border = "none";
         message.style.border = "none";
         document.querySelector("#first").style.border = "none";
         document.querySelector("#last").style.border = "none";
+        console.log(
+          `
+          L'utilisateur ${first.value} ${last.value} vous a envoyé le message suivant : "${message.value}", 
+          vous pouvez lui répondre via son adresse mail: ${email.value}
+           `
+        );
         signForm.reset();
         signForm.style.display = "none";
         modal.style.display = "none";
         modalThank.style.display = "block";
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "Escape") {
+        window.location.reload(true);
+        closeThanks();
       }
     });
 

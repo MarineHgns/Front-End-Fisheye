@@ -71,10 +71,10 @@ a {
   border: black 4px solid;
 }
 
-label {
+.dropdownMenuNav {
   font-weight: bold;
-  font-size: 1.4em;
-  padding-right: 0.4em;
+  font-size: 1em;
+  padding-right: 0.6em;
 }
 
 select {
@@ -82,25 +82,22 @@ select {
   border-radius: 5px;
   border: none;
   color: rgb(255, 255, 255);
-  font-size: 1.4em;
+  font-size: 1.3em;
   height: 59px;
   padding: 0.2rem;
   margin-top: 2rem;
   width: 170px;
 }
 
-.test::after {
-  content: "\f078";
-  transform: rotate(90deg);
-}
+/* select:hover {
+  transform: rotateY(90deg);
+} */
 
 option {
   font-size: 0.9em;
   display: block;
   white-space: nowrap;
   min-height: 1.2em;
-  padding: 0px 2px 1px;
-  border: white 8px solid;
 }
 
 #photo-name {
@@ -146,10 +143,6 @@ option {
   background: rgba(255, 252, 252, 0.925);
 }
 
-#lightbox > div > a {
-  display: block;
-  margin: auto;
-}
 .photo-card-img-lightbox {
   max-width: 85%;
   height: 550px;
@@ -182,43 +175,11 @@ option {
   font-size: 2em;
 }
 
-#lightbox-media img {
-  height: 100%;
-  object-fit: contain;
-  width: 100%;
-}
-
-.photo-card-video-lightbox {
-  max-width: 85%;
-  height: 800px;
-  max-height: 85%;
-  margin: auto;
-  display: block;
-  padding-top: 3em;
-}
-
 #lightbox-name {
   color: #911c1c;
   font-size: 2em;
   text-align: center;
   padding-top: 0.8em;
-}
-
-.photo-card-video {
-  height: 300px;
-  width: 350px;
-  object-fit: cover;
-  object-position: 40% 40%;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 5px;
-  background: #c4c4c4;
-  box-shadow: 0px 4px 12px black;
-  padding: 0em;
-}
-
-video {
-  max-width: 350px;
 }
 
 .itemMedia {
@@ -232,13 +193,7 @@ video {
   background: #c4c4c4;
   box-shadow: 0px 4px 12px black;
   margin: 1em;
-  /* margin-right: 2.4em;
-  margin-left: 2.4em; */
   justify-content: space-around;
-}
-
-.video-title {
-  max-width: 3em;
 }
 
 .card-title {
@@ -253,19 +208,6 @@ video {
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 10em;
-}
-
-.card-title-lightbox {
-  color: #911c1c;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 31px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: 50% 50%;
 }
 
 .number-likes {
@@ -287,7 +229,7 @@ video {
   padding: 35px;
   margin: auto;
   position: relative;
-  top: -27em;
+  top: -22em;
   z-index: 1;
 }
 
@@ -407,6 +349,7 @@ textarea {
   position: fixed;
   right: 2.5em;
   width: 18em;
+  z-index: 1;
 }
 
 .total_likes_counter {

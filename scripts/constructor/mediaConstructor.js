@@ -1,9 +1,9 @@
-import ImageBuilder from "../factories/image.js";
-import VideoBuilder from "../factories/video.js";
+import ImageBuilder from "./image.js";
+import VideoBuilder from "./video.js";
 import Lightbox from "../pages/lightbox.js";
-
 export default class MediaConstructor {
   displayMedia(photographerMedias) {
+    // let boxLightbox = document.getElementById("lightbox_modal");
     photographerMedias.map((media, index) => {
       let articleMedia;
 
@@ -16,6 +16,12 @@ export default class MediaConstructor {
 
       articleMedia.addEventListener("click", () => {
         new Lightbox(photographerMedias, index);
+        // boxLightbox.focus();
+      });
+      articleMedia.addEventListener("keyup", function (event) {
+        if (event.code === "Enter") {
+          new Lightbox(photographerMedias, index);
+        }
       });
     });
   }

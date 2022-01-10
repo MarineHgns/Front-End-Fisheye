@@ -1,9 +1,8 @@
-// import allLikes from "../factories/mediaConstructor.js";
+// Création de la box des likes
 export default class TotalLikes {
   static BoxLikesPrices(data) {
     let photographersData = data.photographers;
     let photographerMedias = data.media;
-
     let allLikes = 0;
 
     let id = window.location.search.split("id=")[1];
@@ -24,14 +23,19 @@ export default class TotalLikes {
 
     photographers.map((photographer) => {
       photographers = photographer;
-
       let box = document.querySelector("#box-likes-prices");
-      let templateBoxLikesPrices = `<div class="total_likes"> 
-                                  <h3 class="total_likes_counter" tabindex="1" aria-label="${allLikes} likes">${allLikes}</h3><i class="fas fa-heart"></i>
+      let templateBoxLikesPrices = `
+                                  <div class="total_likes"> 
+                                    <h3 class="total_likes_counter" tabindex="5" aria-label="${allLikes} likes">${allLikes}
+                                    </h3>
+                                      <i class="fas fa-heart">
+                                      </i>
                                   </div>
                                   <div class="price">
-                                  <p tabindex="1" aria-label="${photographers.price}euro">${photographers.price}&euro; / jour</p>
-                                  </div>`;
+                                    <p tabindex="5" aria-label="${photographers.price}euro">${photographers.price}&euro; / jour
+                                    </p>
+                                  </div>
+                                  `;
       box.innerHTML = templateBoxLikesPrices;
     });
   }

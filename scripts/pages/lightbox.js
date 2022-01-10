@@ -1,53 +1,59 @@
-import ImageBuilder from "../factories/image.js";
-import VideoBuilder from "../factories/video.js";
+import ImageBuilder from "../constructor/image.js";
+import VideoBuilder from "../constructor/video.js";
 
 export default class Lightbox {
   constructor(medias, index) {
     this.medias = medias;
     this.index = index;
     this.boxLightbox = document.getElementById("lightbox_modal");
-
     this.displayLightbox();
   }
 
   displayLightbox() {
     this.boxLightbox.style.display = "block";
 
-    let templateBoxLightbox = `<article id="lightbox" class= "lightbox" role='dialog' aria-label="lightbox ouverte">
-                                    <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
-                                    <span class="fas fa-chevron-left left-arrow-lightbox arrow" id="prev" role="button" title="Previous media"></span>    
-                                    <div id="containMediaLightBox"></div>                                      
-    
-                                    <span class="fas fa-chevron-right right-arrow-lightbox arrow" id="next" role="button" title="Next media"></span>
-                                    
-                                    <div id="lightbox-name"></div>
-                                  </article>`;
+    let templateBoxLightbox = `
+                <article id="lightbox" class= "lightbox" role="dialog" aria-modal="true" aria-labelledby="dialog-form" 
+                    aria-describedby="dialog-desc" aria-label="lightbox ouverte" tabindex="1">
+                  <span class="fas fa-times close-lightbox-icon" role="button" aria-label="fermer la lightbox">
+                  </span>
+                  <span class="fas fa-chevron-left left-arrow-lightbox arrow" id="prev" role="button" aria-label="image précédente">
+                  </span>    
+                  <div id="containMediaLightBox">
+                  </div>                                      
+                  <span class="fas fa-chevron-right right-arrow-lightbox arrow" id="next" role="button"aria-label="image suivante">
+                  </span>
+                  <div id="lightbox-name">
+                  </div>
+                  </article>
+                  `;
 
     this.boxLightbox.innerHTML = templateBoxLightbox;
 
     this.displayCurrentMedia();
 
     let closeBtn = document.querySelector(".close-lightbox-icon");
-    let linkPrevLightBox = document.querySelector(".left-arrow-lightbox");
-    let linkNextLightBox = document.querySelector(".right-arrow-lightbox");
-    linkPrevLightBox.addEventListener("click", () => {
+    let imgPrevLightBox = document.querySelector(".left-arrow-lightbox");
+    let imgNextLightBox = document.querySelector(".right-arrow-lightbox");
+
+    closeBtn.addEventListener("click", () => this.closeLightbox());
+
+    imgPrevLightBox.addEventListener("click", () => {
       this.showSlides(-1);
     });
 
-    linkNextLightBox.addEventListener("click", () => {
+    imgNextLightBox.addEventListener("click", () => {
       this.showSlides(1);
     });
 
-    // navigation with arrow keys <>
+    // navigation with <>
     document.addEventListener("keydown", (e) => {
-      if (e.code === "ArrowLeft" || e.code === "Comma") {
+      if (e.key === "ArrowLeft" || e.key === "Comma") {
         this.showSlides(-1);
       } else if (e.code === "ArrowRight" || e.code === "Period") {
         this.showSlides(1);
       }
     });
-
-    closeBtn.addEventListener("click", () => this.closeLightbox());
 
     document.addEventListener("keydown", (e) => {
       if (e.code === "Escape") {
@@ -87,6 +93,7 @@ export default class Lightbox {
     this.displayCurrentMedia();
   }
 
+  //modifie les attributs class pour l'affichage dans la lightbox
   imgLightbox() {
     let imageLightbox = document.querySelector(".itemMedia");
     imageLightbox.classList.toggle("itemMedia", false);

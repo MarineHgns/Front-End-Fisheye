@@ -1,14 +1,15 @@
-import MediaConstructor from "../factories/mediaConstructor.js";
+import MediaConstructor from "../constructor/mediaConstructor.js";
 import AddLike from "./addLikes.js";
-import TotalLikes from "./likes.js";
 export default class DropDownMenu {
   dropDown(photographerMedias) {
     photographerMedias;
     let dopdownMenu = document.getElementById("dropdownMenu");
 
+    // Tri - au click d'un des filtres (Popularité, Date, Titre) => lance la fonction
     dopdownMenu.addEventListener("change", function () {
       let dopdownMenuValue = dopdownMenu.value;
       let photographerMediasSorted = [];
+
       if (dopdownMenuValue === "date") {
         photographerMediasSorted = photographerMedias.sort((a, b) =>
           sortDate(a, b)
@@ -44,6 +45,7 @@ export default class DropDownMenu {
       return 0;
     }
 
+    // vide la gallerie et incorpore les médias triés à l'aide de la fonction choisie
     function displaySortMedias(photographerMediasSorted) {
       document.getElementById("gallerie").innerHTML = "";
       new MediaConstructor().displayMedia(photographerMediasSorted);

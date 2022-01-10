@@ -1,3 +1,4 @@
+// fetch des données du fichier "data/photographers.json"
 export default class ApiFisheye {
   async getData() {
     let url = "data/photographers.json";
