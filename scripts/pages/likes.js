@@ -10,6 +10,7 @@ export default class TotalLikes {
       ? photographersData
       : photographersData.filter((photographer) => photographer.id == id);
 
+    // Tri des photographer via l'Id
     let photographerId = window.location.search.split("id=")[1];
     photographerMedias = !photographerId
       ? photographerMedias
@@ -17,10 +18,12 @@ export default class TotalLikes {
           (photographer) => photographer.photographerId == photographerId
         );
 
+    // Pour chaque média du photographe on récupère les likes et on les additionnes
     photographerMedias.forEach((element) => {
       allLikes += parseInt(element.likes);
     });
 
+    // On récupère les infos du photographer
     photographers.map((photographer) => {
       photographers = photographer;
       let box = document.querySelector("#box-likes-prices");
@@ -31,9 +34,9 @@ export default class TotalLikes {
                                       <i class="fas fa-heart">
                                       </i>
                                   </div>
-                                  <div class="price">
-                                    <p tabindex="5" aria-label="${photographers.price}euro">${photographers.price}&euro; / jour
-                                    </p>
+                                  <h3 class="price">
+                                    <div tabindex="5" aria-label="${photographers.price} euro">${photographers.price}&euro; / jour
+                                    </h3>
                                   </div>
                                   `;
       box.innerHTML = templateBoxLikesPrices;

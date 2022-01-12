@@ -4,26 +4,20 @@ export default class Modal {
     let closeBtn = document.querySelector(".close_btn");
     let modalbg = document.getElementById("contact_modal");
 
-    modalBtn.addEventListener("click", launchModal);
-
-    closeBtn.addEventListener("click", closeModal);
-
+    // Ouverture modale + fonction display nom photographe
     function launchModal() {
       modalbg.style.display = "block";
       formPhotographerName(data);
     }
 
+    // Fermeture modale
     function closeModal() {
       modalbg.style.display = "none";
       modalbg.setAttribute("aria-hidden", false);
     }
 
-    // window.onclick = function (event) {
-    //   if (event.target == modalbg) {
-    //     modal.style.display = "none";
-    //     modalbg.style.display = "none";
-    //   }
-    // };
+    // Fermeture de la modale au click, echap et enter
+    closeBtn.addEventListener("click", closeModal);
 
     closeBtn.addEventListener("keyup", function (event) {
       if (event.code === "Enter") {
@@ -33,11 +27,12 @@ export default class Modal {
 
     document.addEventListener("keydown", (e) => {
       if (e.code === "Escape") {
-        window.location.reload(true);
         closeModal();
       }
     });
 
+    //Ouverture modale au click
+    modalBtn.addEventListener("click", launchModal);
     // Display du nom du photographe en haut du formulaire de contact
     function formPhotographerName(data) {
       let id = window.location.search.split("id=")[1];

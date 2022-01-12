@@ -19,8 +19,8 @@ export default class ImageBuilder {
                             <div class="number-likes">
                               <span class="like-number" tabindex="5">${image.likes}
                               </span>
-                              <i class="add-likes like-${image.id} far fa-heart" aria-label="cliquez pour aimer"
-                               tabindex="5" roles="button" aria-hidden="true">
+                              <i class="add-likes like-${image.id} far fa-heart" 
+                               tabindex="5" roles="button">
                               </i>
                             </div>
                           </div>

@@ -8,7 +8,7 @@ export default class VideoBuilder {
     articleMedias.className = "article-media";
 
     divMedias.innerHTML = `
-                          <video controls class="itemMedia" tabindex="5" alt="${video.alt}" aria-label="${video.alt}" 
+                          <video class="itemMedia" tabindex="5" alt="${video.alt}" aria-label="${video.alt}" 
                             source src="../${imageGallery}/${video.video}" type="video/mp4">
                           </video>
                           `;
@@ -21,7 +21,7 @@ export default class VideoBuilder {
               <span class="like-number" tabindex="5">${video.likes}
               </span>
                 <i class="add-likes like-${video.id} far fa-heart " aria-label="cliquez pour liker" 
-                  tabindex="5" roles="button" aria-hidden="true">
+                  tabindex="5" roles="button">
                 </i>
             </div>
         </div>

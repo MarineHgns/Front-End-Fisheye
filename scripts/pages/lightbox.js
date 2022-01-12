@@ -15,15 +15,15 @@ export default class Lightbox {
     let templateBoxLightbox = `
                 <article id="lightbox" class= "lightbox" role="dialog" aria-modal="true" aria-labelledby="dialog-form" 
                     aria-describedby="dialog-desc" aria-label="lightbox ouverte" tabindex="1">
-                  <span class="fas fa-times close-lightbox-icon" role="button" aria-label="fermer la lightbox">
+                  <span class="fas fa-times close-lightbox-icon" role="button" aria-label="fermer la lightbox" tabindex="1">
                   </span>
-                  <span class="fas fa-chevron-left left-arrow-lightbox arrow" id="prev" role="button" aria-label="image précédente">
+                  <span class="fas fa-chevron-left left-arrow-lightbox arrow" id="prev" role="button" aria-label="image précédente" tabindex="3">
                   </span>    
-                  <div id="containMediaLightBox">
+                  <div id="containMediaLightBox" tabindex="2">
                   </div>                                      
-                  <span class="fas fa-chevron-right right-arrow-lightbox arrow" id="next" role="button"aria-label="image suivante">
+                  <span class="fas fa-chevron-right right-arrow-lightbox arrow" id="next" role="button" aria-label="image suivante" tabindex="3">
                   </span>
-                  <div id="lightbox-name">
+                  <div id="lightbox-name" tabindex="4">
                   </div>
                   </article>
                   `;
@@ -36,17 +36,22 @@ export default class Lightbox {
     let imgPrevLightBox = document.querySelector(".left-arrow-lightbox");
     let imgNextLightBox = document.querySelector(".right-arrow-lightbox");
 
+    // Fermeture lightbox click, echap et enter
     closeBtn.addEventListener("click", () => this.closeLightbox());
-
-    imgPrevLightBox.addEventListener("click", () => {
-      this.showSlides(-1);
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "Escape") {
+        this.closeLightbox();
+        document.body.style.visibility = "visible";
+      }
     });
 
-    imgNextLightBox.addEventListener("click", () => {
-      this.showSlides(1);
+    closeBtn.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        this.closeLightbox();
+      }
     });
 
-    // navigation with <>
+    // navigation avec <>
     document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowLeft" || e.key === "Comma") {
         this.showSlides(-1);
@@ -55,14 +60,48 @@ export default class Lightbox {
       }
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.code === "Escape") {
-        window.location.reload(true);
-        this.closeLightbox();
+    // navigation au click sur <>
+    imgPrevLightBox.addEventListener("click", () => {
+      this.showSlides(-1);
+    });
+
+    imgNextLightBox.addEventListener("click", () => {
+      this.showSlides(1);
+    });
+
+    // navigation au enter sur <>
+    imgNextLightBox.addEventListener("keydown", (e) => {
+      if (e.keyCode === 13) {
+        this.showSlides(1);
+      }
+    });
+
+    imgPrevLightBox.addEventListener("keydown", (e) => {
+      if (e.keyCode === 13) {
+        this.showSlides(-1);
       }
     });
   }
 
+  closeLightbox() {
+    window.location.reload(true);
+    this.boxLightbox.style.display = "none";
+  }
+
+  //gestion de l'index des médias
+  showSlides(n) {
+    this.index += n;
+    if (this.index >= this.medias.length) {
+      this.index = 0;
+    }
+
+    if (this.index < 0) {
+      this.index = this.medias.length - 1;
+    }
+    this.displayCurrentMedia();
+  }
+
+  //insertion du média dans la template de la lightbox
   displayCurrentMedia() {
     let mediaCurrent = this.medias[this.index];
     let divMedia = mediaCurrent.image
@@ -76,27 +115,12 @@ export default class Lightbox {
     this.imgLightbox();
   }
 
-  closeLightbox() {
-    this.boxLightbox.style.display = "none";
-    window.location.reload(true);
-  }
-
-  showSlides(n) {
-    this.index += n;
-    if (this.index >= this.medias.length) {
-      this.index = 1;
-    }
-    if (this.index < 1) {
-      this.index = this.medias.length - 1;
-    }
-
-    this.displayCurrentMedia();
-  }
-
   //modifie les attributs class pour l'affichage dans la lightbox
   imgLightbox() {
     let imageLightbox = document.querySelector(".itemMedia");
     imageLightbox.classList.toggle("itemMedia", false);
     imageLightbox.classList.toggle("photo-card-img-lightbox", true);
+    imageLightbox.setAttribute("controls", true);
+    imageLightbox.setAttribute("tabindex", "2");
   }
 }

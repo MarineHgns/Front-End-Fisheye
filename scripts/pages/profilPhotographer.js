@@ -30,7 +30,7 @@ export default class ProfilPhotographer {
                       </p>
                 </div>
                   <button class="contact_button ph-profile-btn" type="button"
-                    aria-haspopup="dialog" aria-controls="dialog" tabindex="1">Contactez-moi
+                    aria-haspopup="dialog" tabindex="1">Contactez-moi
                   </button>
                   <img src="${picture}" alt="Photo de profil ${photographers[0].name}" tabindex="2">
             `;

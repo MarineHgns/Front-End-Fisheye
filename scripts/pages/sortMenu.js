@@ -27,25 +27,28 @@ export default class DropDownMenu {
       new displaySortMedias(photographerMediasSorted);
     });
 
+    // Tri par Date
     function sortDate(a, b) {
       if (a.date > b.date) return -1;
       if (a.date < b.date) return 1;
       return 0;
     }
 
+    // Tri par nombre de likes
     function sortPop(a, b) {
       if (a.likes > b.likes) return -1;
       if (a.likes < b.likes) return 1;
       return 0;
     }
 
+    // Tri par titre
     function sortTitle(a, b) {
       if (a.title < b.title) return -1;
       if (a.title > b.title) return 1;
       return 0;
     }
 
-    // vide la gallerie et incorpore les médias triés à l'aide de la fonction choisie
+    // Vide la gallerie et incorpore les médias triés à l'aide de la fonction choisie
     function displaySortMedias(photographerMediasSorted) {
       document.getElementById("gallerie").innerHTML = "";
       new MediaConstructor().displayMedia(photographerMediasSorted);

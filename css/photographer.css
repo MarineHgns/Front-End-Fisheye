@@ -74,7 +74,7 @@ a {
 .dropdownMenuNav {
   font-weight: bold;
   font-size: 1em;
-  padding-right: 0.6em;
+  margin-left: 5.5%;
 }
 
 select {
@@ -361,4 +361,8 @@ textarea {
   position: relative;
   top: -2em;
   right: -3em;
+}
+
+.price {
+  font-weight: 500;
 }

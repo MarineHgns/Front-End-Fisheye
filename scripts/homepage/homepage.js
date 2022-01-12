@@ -2,6 +2,7 @@
 export default class PhotographerFactory {
   static getUserCardDOM(data) {
     let photographers = data.photographers;
+    //Display tout les photographes ainsi que leurs infos, array d'objet
     photographers.map((photographer) => {
       const picture = `assets/Photographers ID Photos/${photographer.portrait}`;
       let photographersSection = document.getElementsByClassName(

@@ -5,9 +5,17 @@ export default class Form {
     const modalThank = document.querySelector(".modal-thank");
     const closeThank = document.querySelector(".close_btn_thank");
 
+    // Fermeture de la modale de remerciement au click, au enter et au echap
     closeThank.addEventListener("click", closeThanks);
     closeThank.addEventListener("keyup", function (event) {
       if (event.code === "Enter") {
+        closeThanks();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "Escape") {
+        window.location.reload(true);
         closeThanks();
       }
     });
@@ -16,6 +24,7 @@ export default class Form {
       modalThank.style.display = "none";
     }
 
+    // Submit du formulaire + reset + consolelog
     signForm.addEventListener("submit", function (e) {
       let first = document.getElementById("first");
       let last = document.getElementById("last");
@@ -38,13 +47,7 @@ export default class Form {
       }
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.code === "Escape") {
-        window.location.reload(true);
-        closeThanks();
-      }
-    });
-
+    // Vérification des inputs nom et prénom
     function nameChecker(classErreur, input) {
       const $nameError = document.querySelector(classErreur);
       const $inputError = document.getElementById(input);
@@ -59,6 +62,7 @@ export default class Form {
       }
     }
 
+    // Vérification email
     let email = document.getElementById("email");
     function emailChecker() {
       let regexEmail =
@@ -74,6 +78,7 @@ export default class Form {
       }
     }
 
+    // Vérification message
     let message = document.getElementById("message");
     function messageChecker() {
       const $messageError = document.querySelector(".messageError");
@@ -87,6 +92,7 @@ export default class Form {
       }
     }
 
+    // Vérification de chaque input lors du submit
     const formValid = () => {
       nameChecker(".firstError", "first");
       nameChecker(".lastError", "last");
