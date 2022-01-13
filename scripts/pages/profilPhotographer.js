@@ -15,8 +15,9 @@ export default class ProfilPhotographer {
     const sectionPhotographerProfil = document.getElementsByClassName(
       "photographer_section_header"
     );
-
+    // Chemin de la photo de profil du photographe
     const picture = `assets/Photographers ID Photos/${photographers[0].portrait}`;
+    // Création de la template
     let article = document.createElement("article");
     article.classList.add("header-photographer-profile");
     const templatePhotographerProfil = `

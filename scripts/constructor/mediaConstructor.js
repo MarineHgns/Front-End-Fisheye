@@ -26,7 +26,7 @@ export default class MediaConstructor {
           new focusLightbox();
         }
       });
-
+      // gère le focus de la lightbox
       function focusLightbox() {
         document.body.style.visibility = "hidden";
         boxLightbox.style.visibility = "visible";

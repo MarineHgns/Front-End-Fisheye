@@ -4,7 +4,9 @@ export default class PhotographerFactory {
     let photographers = data.photographers;
     //Display tout les photographes ainsi que leurs infos, array d'objet
     photographers.map((photographer) => {
+      // Chemin des photos de profil
       const picture = `assets/Photographers ID Photos/${photographer.portrait}`;
+      // Création de la template pour chaque photographe
       let photographersSection = document.getElementsByClassName(
         "photographer_section"
       );

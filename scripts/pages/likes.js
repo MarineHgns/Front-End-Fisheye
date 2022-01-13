@@ -18,12 +18,12 @@ export default class TotalLikes {
           (photographer) => photographer.photographerId == photographerId
         );
 
-    // Pour chaque média du photographe on récupère les likes et on les additionnes
+    // additions de tous les likes
     photographerMedias.forEach((element) => {
       allLikes += parseInt(element.likes);
     });
 
-    // On récupère les infos du photographer
+    // insertion des infos dans la template
     photographers.map((photographer) => {
       photographers = photographer;
       let box = document.querySelector("#box-likes-prices");

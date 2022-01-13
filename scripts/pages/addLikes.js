@@ -3,8 +3,10 @@ export default class AddLike {
     const clickLikes = document.querySelectorAll(".add-likes");
     // Transforme le coeur et ajoute/soustrait 1 du compteur media et du compteur box
     for (const clicks of clickLikes) {
+      // Cible les zones de textes précédentes au coeur clickable
       let siblingClick = clicks.previousElementSibling;
       let counterLikesCard = siblingClick;
+      // likes (compteur)
       let totalLikes = parseInt(counterLikesCard.innerHTML);
       let counterLike = document.querySelector(".total_likes_counter");
       let likeValue = parseInt(counterLike.innerHTML);
@@ -18,6 +20,7 @@ export default class AddLike {
         let isLiked = -1 != classListTarget.indexOf("isLiked");
 
         let hasClassBtn = -1 != classListTarget.indexOf("add-likes");
+
         if (hasClassBtn) {
           siblingClick.innerHTML = isLiked ? --totalLikes : ++totalLikes;
           counterLike.innerHTML = isLiked ? --likeValue : ++likeValue;
@@ -41,6 +44,7 @@ export default class AddLike {
               : e.target.classList.value.split(" ");
 
           let hasClassBtn = -1 != classListTarget.indexOf("add-likes");
+
           if (hasClassBtn) {
             let isLiked = -1 != classListTarget.indexOf("isLiked");
 
