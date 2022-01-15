@@ -4,13 +4,13 @@ import DropDownMenu from "./sortMenu.js";
 import MediaConstructor from "../constructor/mediaConstructor.js";
 export default class ProfilPhotographer {
   static displayProfilPhotographer(data) {
-    let photographersData = data.photographers;
+    let dataPhotographers = data.photographers;
 
     // récupère l'ID du photographe via l'url et tri les photographes via l'ID pour récupérer les infos de celui-ci
     const id = window.location.search.split("id=")[1];
     const photographers = !id
-      ? photographersData
-      : photographersData.filter((photographer) => photographer.id == id);
+      ? dataPhotographers
+      : dataPhotographers.filter((photographer) => photographer.id == id);
 
     const sectionPhotographerProfil = document.getElementsByClassName(
       "photographer_section_header"

@@ -8,7 +8,7 @@ export default class Lightbox {
     this.boxLightbox = document.getElementById("lightbox_modal");
     this.displayLightbox();
   }
-
+  // Template de la lightbox
   displayLightbox() {
     this.boxLightbox.style.display = "block";
 
